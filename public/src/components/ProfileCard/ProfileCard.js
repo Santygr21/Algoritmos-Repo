@@ -1,21 +1,25 @@
-class ProfileCard extends HTMLElement{
-    static get observeAttribute(){
-        return['name']
+class Profile extends HTMLElement{
+    static get observedAttributes(){
+    return ['name']
     }
     constructor(){
         super();
-        this.attachShadow({mode:'open'})
+        this.attachShadow({mode: 'open'});
     }
-    attributeChangedCallback(prop, newValue){
-        this[prop] = newValue;
-        this.render();
+    attributeChangedCallback(propName, oldValue, newValue){
+        this[propName] = newValue;
+        this.render()
     }
     connectedCallback(){
         this.render();
     }
     render(){
-        this.shadowRoot.innerHTML = `<h1>${this.name}</h1>`
+        this.shadowRoot.innerHTML =`
+        <section>
+            <h1>${this.name}</h1>
+        </section>`;
+        console.log(this.name);
     }
 }
 
-customElements.define('profile-card', ProfileCard)
+customElements.define('profile-card', Profile)

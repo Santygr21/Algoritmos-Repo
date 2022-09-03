@@ -1,1 +1,2 @@
-import './ProfileCard/ProfileCard.js'
+import './profileCard/profileCard.js'
+import './Contador.js'

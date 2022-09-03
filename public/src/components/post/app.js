@@ -1,17 +1,19 @@
 import '../app.js'
-import data from '../post/data.js'
+import data from './data.js'
 
-class Post extends HTMLElement{
+console.log(data);
+class Post extends HTMLElement{  
     constructor(){
         super()
         this.attachShadow({mode: 'open'})
+        console.log(data.length);
     }
     connectedCallback(){
         this.render()
     }
     render(){
-        const compts = data.map(({name})=>`<profile-card name="${name}">${name}</profile-card>`)
-        console.log(compts);
+        const compts = data.map(({name}) => `<profile-card name=${name}></profile-card>`)
+        this.shadowRoot.innerHTML = compts.join("")        
         this.shadowRoot.innerHTML = `<link rel="stylesheet" href="./src/components/post/style.css">
         <div class="container">
             <div class="infoContainer">
@@ -51,4 +53,4 @@ class Post extends HTMLElement{
     }
 }
 
-customElements.define("post-name", Post)
+customElements.define("app-container", Post)
