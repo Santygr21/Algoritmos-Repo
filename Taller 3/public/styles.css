@@ -1,0 +1,30 @@
+*{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background-color: rgba(231, 231, 231, 0.396);
+}
+
+app-container{
+    display: flex;
+    flex-direction: column;
+}
+
+my-suggest{
+    margin-left: 70%;
+    margin-top: 4%;
+}
+
+my-nav{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    border-right: solid 1px;
+    border-color: rgba(101, 101, 101, 0.402);
+}
+
+
